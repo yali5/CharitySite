@@ -3907,3 +3907,11 @@ input, select, textarea {
 			}
 
 		}
+
+/* Logo */
+
+.logo {
+  width: 150px;       /* Or whatever size you prefer */
+  height: auto;       /* Maintains aspect ratio */
+  vertical-align: middle; /* Aligns nicely with heading text */
+}
