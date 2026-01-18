@@ -1,8 +1,15 @@
-// vite.config.js
-export default {
-  root: './',
-  publicDir: 'public',
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  // this tells Vite: serve static files from /public
+  publicDir: "public",
+
   server: {
-    port: 5173
+    open: true
+  },
+
+  build: {
+    outDir: "dist",
+    emptyOutDir: true
   }
-};
+});

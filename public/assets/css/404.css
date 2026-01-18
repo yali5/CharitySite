@@ -1,0 +1,16 @@
+/* Hyperspace 404: fullscreen + centered */
+#main.wrapper.fullscreen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main .inner {
+  max-width: 52rem;
+  text-align: center;
+}
+
+.actions.special {
+  justify-content: center;
+}
