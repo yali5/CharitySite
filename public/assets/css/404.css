@@ -1,16 +1,130 @@
-/* Hyperspace 404: fullscreen + centered */
-#main.wrapper.fullscreen {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+:root {
+  --bg-top: #3a2a73;
+  --bg-bottom: #2c2352;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.65);
+  --primary: #7c5cff;
+  --primary-hover: #9f86ff;
 }
 
-#main .inner {
-  max-width: 52rem;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
+  background:
+    radial-gradient(1000px 500px at 20% 20%, rgba(124, 92, 255, 0.35), transparent 60%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.container {
+  width: min(720px, 100%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
-.actions.special {
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #b69cff);
+}
+
+.code {
+  font-weight: 700;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(36px, 6vw, 56px);
+  letter-spacing: -0.02em;
+}
+
+.message {
+  margin: 0 auto 22px;
+  max-width: 52ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
   justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.button {
+  text-decoration: none;
+  color: var(--text);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.25);
+  font-weight: 600;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  border-color: transparent;
+}
+
+.path {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
 }
