@@ -5,218 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>404 — Page Not Found</title>
     <meta name="description" content="The page you’re looking for doesn’t exist." />
-
-    <style>
-      :root {
-        --bg0: #2c2352;
-        --bg1: #3a2a73;
-        --card: rgba(255, 255, 255, 0.06);
-        --border: rgba(255, 255, 255, 0.14);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.68);
-        --primary: #7c5cff;
-        --primary2: #a78bfa;
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      }
-
-      * { box-sizing: border-box; }
-      html, body { height: 100%; }
-
-      body {
-        margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
-          "Segoe UI Emoji";
-        color: var(--text);
-        background:
-          radial-gradient(1200px 600px at 20% 20%, rgba(124, 92, 255, 0.35), transparent 60%),
-          radial-gradient(900px 500px at 80% 30%, rgba(167, 139, 250, 0.25), transparent 55%),
-          linear-gradient(180deg, var(--bg1), var(--bg0));
-        display: grid;
-        place-items: center;
-        padding: 24px;
-      }
-
-      .wrap {
-        width: min(880px, 100%);
-        display: grid;
-        gap: 18px;
-      }
-
-      .top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        opacity: 0.9;
-        font-size: 14px;
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        background: rgba(0,0,0,0.18);
-        border: 1px solid rgba(255,255,255,0.10);
-        border-radius: 999px;
-        backdrop-filter: blur(10px);
-      }
-
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), var(--primary2));
-        box-shadow: 0 0 0 4px rgba(124,92,255,0.18);
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        box-shadow: var(--shadow);
-        padding: 28px;
-        backdrop-filter: blur(10px);
-      }
-
-      h1 {
-        margin: 0 0 8px 0;
-        font-size: clamp(42px, 6vw, 68px);
-        letter-spacing: -0.03em;
-        line-height: 1.05;
-      }
-
-      p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 16px;
-        line-height: 1.6;
-        max-width: 60ch;
-      }
-
-      .actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 18px;
-      }
-
-      .btn {
-        appearance: none;
-        border: 1px solid rgba(255,255,255,0.14);
-        background: rgba(0,0,0,0.18);
-        color: var(--text);
-        text-decoration: none;
-        padding: 12px 14px;
-        border-radius: 12px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-        background: rgba(0,0,0,0.26);
-        border-color: rgba(255,255,255,0.22);
-      }
-
-      .btn.primary {
-        background: linear-gradient(135deg, var(--primary), var(--primary2));
-        border-color: rgba(255,255,255,0.22);
-      }
-
-      .btn.primary:hover {
-        background: linear-gradient(135deg, #6d4dff, #b79cff);
-      }
-
-      .icon {
-        width: 18px;
-        height: 18px;
-        display: inline-block;
-      }
-
-      .hint {
-        margin-top: 10px;
-        font-size: 13px;
-        color: rgba(255,255,255,0.55);
-      }
-
-      .footer {
-        text-align: center;
-        color: rgba(255,255,255,0.45);
-        font-size: 12px;
-        padding: 10px 0 0;
-      }
-
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.95em;
-        color: rgba(255,255,255,0.82);
-        background: rgba(0,0,0,0.18);
-        padding: 2px 6px;
-        border-radius: 8px;
-        border: 1px solid rgba(255,255,255,0.12);
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/css/404.css" />
   </head>
 
   <body>
     <main class="wrap" role="main" aria-labelledby="title">
-      <div class="top">
+      <section class="container">
         <div class="badge" aria-label="Error code 404">
           <span class="dot" aria-hidden="true"></span>
-          <strong>404</strong>
-          <span style="color: rgba(255,255,255,0.6);">Not Found</span>
+          <span class="code">404</span>
+          <span class="label">Not Found</span>
         </div>
-        <div class="badge">
-          <span style="color: rgba(255,255,255,0.6);">Path:</span>
+
+        <!-- Centered core block (title + message + pills) -->
+        <div class="core">
+          <h1 id="title">404 Page not found</h1>
+          <p class="message">Sorry, we couldn’t find the page you’re looking for.</p>
+
+          <div class="actions" role="group" aria-label="Primary actions">
+            <a class="button primary" href="/">Go to homepage</a>
+            <a class="button" href="/#three">Contact support</a>
+          </div>
+        </div>
+
+        <p class="path">
+          Requested path:
           <code id="path">/</code>
-        </div>
-      </div>
-
-      <section class="card">
-        <h1 id="title">Page not found</h1>
-        <p>
-          The page you’re looking for doesn’t exist (or it may have been moved).
-          Use the buttons below to get back on track.
         </p>
-
-        <div class="actions" role="group" aria-label="Primary actions">
-          <a class="btn primary" href="/">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1v-9.5Z" stroke="white" stroke-width="1.8" />
-            </svg>
-            Go to homepage
-          </a>
-
-          <!-- Update this href to your real contact section/id if needed -->
-          <a class="btn" href="/#contact">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 6h16v12H4V6Z" stroke="white" stroke-width="1.8" />
-              <path d="m4 7 8 6 8-6" stroke="white" stroke-width="1.8" />
-            </svg>
-            Contact support
-          </a>
-        </div>
-
-        <div class="hint">
-          Tip: check the URL for typos, or head back to the homepage.
-        </div>
       </section>
 
-      <div class="footer">
-        &copy; <span id="year"></span> Your Site. All rights reserved.
-      </div>
+      <footer class="copyright">
+        2026 Mazhar Ali Foundation. All rights reserved.
+      </footer>
     </main>
 
     <script>
-      // Show the current path (helpful for debugging)
       document.getElementById("path").textContent = window.location.pathname || "/";
-
-      // Footer year
-      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
