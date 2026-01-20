@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 — Page Not Found</title>
+    <meta name="description" content="The page you’re looking for doesn’t exist." />
+    <link rel="stylesheet" href="/assets/css/404.css" />
+  </head>
+
+  <body>
+    <main class="wrap" role="main" aria-labelledby="title">
+      <section class="container">
+        <div class="badge" aria-label="Error code 404">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="code">404</span>
+          <span class="label">Not Found</span>
+        </div>
+
+        <!-- Centered core block (title + message + pills) -->
+        <div class="core">
+          <h1 id="title">404 Page not found</h1>
+          <p class="message">Sorry, we couldn’t find the page you’re looking for.</p>
+
+          <div class="actions" role="group" aria-label="Primary actions">
+            <a class="button primary" href="/">Go to homepage</a>
+            <a class="button" href="/#three">Contact support</a>
+          </div>
+        </div>
+
+        <p class="path">
+          Requested path:
+          <code id="path">/</code>
+        </p>
+      </section>
+
+      <footer class="copyright">
+        2026 Mazhar Ali Foundation. All rights reserved.
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("path").textContent = window.location.pathname || "/";
+    </script>
+  </body>
+</html>
